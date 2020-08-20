@@ -1,9 +1,14 @@
 import React from 'react'
+import ListHomeItem from './ListHomeItem/ListHomeItem'
 
-export default function ListHome() {
+ const ListHome = ({trendFilms, refFilm}) => {
+
+  
   return (
-    <ul>
-      {/* {nameFilms.map(nameFilm => <listHomeItem {...nameFilm}/> )} */}
+    <ul onClick={refFilm}>
+      {trendFilms.map(trendFilm => <ListHomeItem key={trendFilm.id} trendFilm={trendFilm}/> )}
     </ul>
   )
 }
+
+export default ListHome

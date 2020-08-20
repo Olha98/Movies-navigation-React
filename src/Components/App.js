@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-import { Switch, Route} from 'react-router-dom';
+import { Switch, Route, withRouter} from 'react-router-dom';
 import Header from './Header/Header';
 import HomePage from '../Views/HomePage/HomePage';
 import MoviesPage from '../Views/MoviesPage/MoviesPage';
 import NotFound from '../Views/NotFound/NotFound';
+import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
 
-export default class App extends Component {
+ class App extends Component {
   render() {
     return (
       <>
        <Header/>
        <Switch>
        <Route path="/home" exact component={HomePage} />
+       <Route path="/movies/:id" component={MovieDetailesPage} />
        <Route path="/movies" component={MoviesPage} />
        <Route component={NotFound} />
      </Switch>
@@ -20,6 +22,9 @@ export default class App extends Component {
     )
   }
 }
+
+
+export default withRouter(App)
 
 
 

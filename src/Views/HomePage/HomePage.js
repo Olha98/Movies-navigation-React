@@ -2,32 +2,39 @@ import React, { Component } from 'react'
 import ListHome from './ListHome/ListHome'
 import homeServices from '../../Services/homeServices'
 
- class HomePage extends Component {
+
+class HomePage extends Component {
   state = {
     trendFilms: [],
+    aboutFilm: ''
   }
 
-  componentDidMount(){
+
+
+  componentDidMount() {
     this.getTrending()
+
   }
 
-  getTrending=()=>{
-  const {trendFilms} = this.state;
+  getTrending = () => {
+    homeServices.getTrendingFilms().then(data => this.setState({ trendFilms: data.results }))
+  }
 
-  homeServices.getTrendingFilms().then(data=> this.setState({trendFilms:data}))
-
-  } 
-
-  aaccca=()=>{
-   console.log("aaccca")
-    }
-
+  getInfoAboutFilm() {
+    homeServices.getInfoFilms().then(data => this.setState({ aboutFilm: data.results }))
+  }
+  refFilm = (e) => {
+    console.log('e.target', e.target)
+  }
 
   render() {
+    const { trendFilms } = this.state
     return (
       <section>
         <h2>Trending today</h2>
-        <ListHome />
+
+        <ListHome trendFilms={trendFilms} refFilm={this.refFilm} />
+
       </section>
     )
   }
