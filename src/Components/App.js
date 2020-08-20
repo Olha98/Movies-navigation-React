@@ -12,7 +12,7 @@ import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
       <>
        <Header/>
        <Switch>
-       <Route path="/home" exact component={HomePage} />
+       <Route path="/" exact component={HomePage} />
        <Route path="/movies/:id" component={MovieDetailesPage} />
        <Route path="/movies" component={MoviesPage} />
        <Route component={NotFound} />

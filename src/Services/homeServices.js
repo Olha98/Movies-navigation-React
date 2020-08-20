@@ -11,15 +11,5 @@ export default {
       console.log(error)
     }
   },
-  async getInfoFilms(id) {
-    try {
-      const responce = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&page=1&include_adult=false`)
-      return responce.data
-      } catch (error) {
-        console.log(error)
-      }
-  }
-
-  
 
 }

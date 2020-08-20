@@ -1,15 +1,38 @@
-import React from 'react'
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
+import MovieDetailesServices from '../../Services/MovieDetailesServices'
+import MovieDetailesList from './MovieDetailesList/MovieDetailesList';
+import MovieDetailesMore from './MovieDetailesMore/MovieDetailesMore';
+
+
+class MovieDetailesPage extends Component {
+  state = {
+    infoFilm: '',
+  }
+
+
+  componentDidMount() {
+    this.getInfoAboutFilm();
+  }
 
 
 
-const MovieDetailesPage = (props) => {
+  getInfoAboutFilm() {
+    const id = this.props.match.params.id;
+    MovieDetailesServices.getInfoFilms(id).then(data => this.setState({ infoFilm: data }));
+  }
 
-  console.log('props.location.pathname', props.location.pathname)
-console.log('props.location', props)
-  return (
-    <h2>Movie</h2>
-  )
+  render() {
+    const {infoFilm} = this.state;
+    return (
+      <section>
+        <button>GO BACK</button>
+         <MovieDetailesList infoFilm={infoFilm}/>
+         <MovieDetailesMore infoFilm={infoFilm}/>
+      </section>
+
+    )
+  }
 }
 
 export default withRouter(MovieDetailesPage)
