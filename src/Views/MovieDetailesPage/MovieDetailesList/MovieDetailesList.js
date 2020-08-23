@@ -5,7 +5,6 @@ import React from 'react'
 
 
 const MovieDetailesList = ({infoFilm}) => {
-console.log(infoFilm)
 const {backdrop_path, original_title, release_date, overview, popularity,genres} = infoFilm
 
 

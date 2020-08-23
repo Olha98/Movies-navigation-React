@@ -23,12 +23,12 @@ class MovieDetailesPage extends Component {
   }
 
   render() {
-    const {infoFilm} = this.state;
+    const { infoFilm } = this.state;
     return (
       <section>
         <button>GO BACK</button>
-         <MovieDetailesList infoFilm={infoFilm}/>
-         <MovieDetailesMore infoFilm={infoFilm}/>
+        <MovieDetailesList infoFilm={infoFilm} />
+        <MovieDetailesMore infoFilm={infoFilm} />
       </section>
 
     )

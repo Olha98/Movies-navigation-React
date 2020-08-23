@@ -18,7 +18,6 @@ import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
        <Route component={NotFound} />
      </Switch>
      </> 
-
     )
   }
 }
