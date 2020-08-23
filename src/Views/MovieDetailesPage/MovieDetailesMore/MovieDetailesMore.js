@@ -24,13 +24,14 @@ class MovieDetailesMore extends Component {
   }
 
   render() {
-    const { infoFilm, cast } = this.props;
+    const { infoFilm } = this.props;
+    const {cast} = this.state
     return (
       <ul>
         <h3>Additional information</h3>
         <li><NavLink to={`${this.props.match.url}/cast`}>Cast</NavLink></li>
         <li><NavLink to={`${this.props.match.url}/reviews`}>Reviews</NavLink></li>
-        <Route path={`${this.props.match.url}/cast`} render={(props) => <Cast {...cast}/>} />
+        <Route path={`${this.props.match.url}/cast`} render={() => <Cast cast={cast}/>} />
         <Route path={`${this.props.match.url}/reviews`} render={() => <Reviews />} />
       </ul>
     )
