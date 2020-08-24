@@ -38,13 +38,3 @@ class MovieDetailesPage extends Component {
 export default withRouter(MovieDetailesPage)
 
 
-// {/* <Link to={{
-//     pathname: `/Cast/${id}`,
-//     state: { from: this.props.location },
-//   }}>Cast</Link>
-
-// <Link to={{
-//     pathname: `/Reviews/${id}`,
-//     state: { from: this.props.location },
-//   }}>Reviews</Link>
-// </> */}

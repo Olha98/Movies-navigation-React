@@ -22,6 +22,7 @@ class HomePage extends Component {
  
   render() {
     const { trendFilms } = this.state
+    
     return (
       <section>
         <h2>Trending today</h2>
