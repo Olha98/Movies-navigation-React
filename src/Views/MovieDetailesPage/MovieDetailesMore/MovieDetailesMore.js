@@ -10,7 +10,7 @@ import app from '../../../Services/reviewsServices'
 class MovieDetailesMore extends Component {
   state = {
     idFilm: '',
-    id: '',
+    results:[],
     cast: []
   }
 
@@ -22,26 +22,25 @@ class MovieDetailesMore extends Component {
 
   getCast() {
     const id = this.props.match.params.id
-    services.getCredits(id).then(({ cast }) => this.setState({ cast, id }))
+    services.getCredits(id).then(({ cast }) => this.setState({ cast }))
 
   }
 
   getReviews() {
-    const { id } = this.state
-    console.log(this.state)
-    app.getReviews(id).then(data => console.log('datadata', data))
+    const id = this.props.match.params.id
+    app.getReviews(id).then(({ results }) => this.setState({ results}))
   }
 
   render() {
     const { infoFilm } = this.props;
-    const { cast } = this.state
+    const { cast, results} = this.state
     return (
       <ul>
         <h3>Additional information</h3>
         <li><NavLink to={`${this.props.match.url}/cast`}>Cast</NavLink></li>
         <li><NavLink to={`${this.props.match.url}/reviews`}>Reviews</NavLink></li>
         <Route path={`${this.props.match.url}/cast`} render={() => <Cast cast={cast} />} />
-        <Route path={`${this.props.match.url}/reviews`} render={() => <Reviews />} />
+        <Route path={`${this.props.match.url}/reviews`} render={() => <Reviews results={results}/>} />
       </ul>
     )
   }
