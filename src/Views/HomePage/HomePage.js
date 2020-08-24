@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ListHome from './ListHome/ListHome'
 import homeServices from '../../Services/homeServices'
+import { withRouter } from 'react-router-dom';
+const queryString = require('query-string');
 
 
 class HomePage extends Component {
@@ -11,8 +13,22 @@ class HomePage extends Component {
 
 
   componentDidMount() {
-    this.getTrending()
+    const {query: nextQuery } = queryString.parse(this.props.location.search)
+    if(nextQuery){
+      this.getTrending()
+    }
   }
+
+  componentDidUpdate(prevState, prevProps) {
+    // const {query:prevQuery} = queryString.parse(prevState.location.search)
+    //   const {query: nextQuery } = queryString.parse(this.props.location.search)
+  
+    //   console.log(prevQuery,'prevQuery')
+    //   console.log(nextQuery,'nextQuery')
+    //   if(prevQuery !==nextQuery){
+  
+    //   }
+    }
 
   getTrending = () => {
     homeServices.getTrendingFilms().then(data => this.setState({ trendFilms: data.results }))
@@ -26,9 +42,9 @@ class HomePage extends Component {
     return (
       <section>
         <h2>Trending today</h2>
-        <ListHome trendFilms={trendFilms} />
+        <ListHome films={trendFilms} />
       </section>
     )
   }
 }
-export default HomePage
+export default withRouter(HomePage)

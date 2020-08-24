@@ -1,12 +1,13 @@
 import React from 'react'
 import ListHomeItem from './ListHomeItem/ListHomeItem'
 
- const ListHome = ({trendFilms}) => {
+
+ const ListHome = ({films}) => {
 
   
   return (
     <ul>
-      {trendFilms.map(trendFilm => <ListHomeItem key={trendFilm.id} trendFilm={trendFilm}/> )}
+      {films.map(trendFilm => <ListHomeItem key={trendFilm.id} trendFilm={trendFilm}/> )}
     </ul>
   )
 }
