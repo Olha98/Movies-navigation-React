@@ -5,6 +5,7 @@ import HomePage from '../Views/HomePage/HomePage';
 import MoviesPage from '../Views/MoviesPage/MoviesPage';
 import NotFound from '../Views/NotFound/NotFound';
 import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
+import routes from '../routes'
 
  class App extends Component {
   render() {
@@ -12,9 +13,9 @@ import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
       <>
        <Header/>
        <Switch>
-       <Route path="/" exact component={HomePage} />
-       <Route path="/movies/:id" component={MovieDetailesPage} />
-       <Route path="/movies" component={MoviesPage} />
+       <Route path={routes.home} exact component={HomePage} />
+       <Route path={routes.movies_id} component={MovieDetailesPage} />
+       <Route path={routes.movies} component={MoviesPage} />
        <Route component={NotFound} />
      </Switch>
      </> 

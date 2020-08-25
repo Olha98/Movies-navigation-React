@@ -1,0 +1,35 @@
+.list{
+display: flex;
+flex-direction: row;
+list-style: none;
+justify-content: space-between;
+align-items: center;
+width: 40%;
+padding: 0px;
+}
+
+.listItem{
+  padding: 10px 100px;
+  text-decoration: none;
+  color: burlywood;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.listItem:hover{
+height: 100%;
+background-color: rgba(185, 184, 101, 0.234);
+}
+
+.header{
+display: flex;
+width: 100%;
+background-color: #000;
+}
+
+.header nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

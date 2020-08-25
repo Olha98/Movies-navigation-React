@@ -1,0 +1,21 @@
+.link{
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.listItem{
+background-color: burlywood;
+border-radius: 10px;
+margin: 5px;
+padding: 10px;
+}
+
+.listItem:hover{
+  background-color: #000;
+  }
+
+
+ .link:hover{
+    color: burlywood;
+  }

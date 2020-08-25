@@ -1,0 +1,26 @@
+.goBack {
+  background-color: burlywood;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 7px;
+  border: 1px black solid;
+  font-weight: 600;
+  
+}
+
+.section{
+width: 80%;
+margin: 0 auto;
+}
+
+.goBack:hover {
+  background: black;
+  box-shadow: 0 15px 20px rgba(0,0,0,.4);
+  color: burlywood;
+  transform: translateX(-7px);
+}
+
+.section img{
+  margin: 20px 20px 10px 0px;
+  box-shadow: 0 15px 20px rgba(0,0,0,.4);
+}

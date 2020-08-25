@@ -1,15 +1,17 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import routes from '../../routes'
+import css from './Header.module.css'
 
 
 export default function Header() {
   return (
   
-    <header>
+    <header className={css.header}>
       <nav>
-        <ul>
-          <li><NavLink to="/" className="link" activeClassName="active-link">Home</NavLink></li>
-          <li><NavLink to="/movies" className="link" activeClassName="active-link">Movies</NavLink></li>
+        <ul className={css.list}>
+          <li><NavLink to={routes.home} className="link" activeClassName="active-link" className={css.listItem}>Home</NavLink></li>
+          <li><NavLink to={routes.movies} className="link" activeClassName="active-link" className={css.listItem}>Movies</NavLink></li>
         </ul>
       </nav>
     </header>

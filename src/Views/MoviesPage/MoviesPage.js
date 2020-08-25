@@ -21,7 +21,6 @@ class MoviesPage extends Component {
   }
 
 
-
   hendelChangeSearch = (query) => {
     console.log('query', query)
     console.log('this.props', this.props)

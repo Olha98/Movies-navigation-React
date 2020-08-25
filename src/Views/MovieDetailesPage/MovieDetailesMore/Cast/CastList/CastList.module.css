@@ -1,0 +1,14 @@
+.listItem img{
+width: 90px;
+max-height: 120px;
+
+}
+
+.listImage{
+  width: 90px;
+  height: 120px;
+}
+
+.listItem{
+  margin: 10px;
+}
