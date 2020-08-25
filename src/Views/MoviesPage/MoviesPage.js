@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchMovie from '../MovieDetailesPage/SearchMovie/SearchMovie'
 import services from '../../Services/searchServices'
+import css from './MoviesPage.module.css'
 const queryString = require('query-string');
 
 
@@ -32,10 +33,11 @@ class MoviesPage extends Component {
 
   render() {
     return (
-      <>
-        <p>MoviesPage</p>
+      <section className={css.boxMovies}>
+        <h2>Let's choose an interesting movie for you?</h2>
+        <hr/>
         <SearchMovie onSubmit={this.hendelChangeSearch} />
-      </>
+      </section>
 
     )
   }

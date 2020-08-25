@@ -10,12 +10,20 @@ import css from './MovieDetailesPage.module.css'
 class MovieDetailesPage extends Component {
   state = {
     infoFilm: '',
+    search: '',
+    from: '',
   }
 
 
   componentDidMount() {
-    console.log()
     this.getInfoAboutFilm();
+   console.log( this.props.location.state,  'this.props.location.state')
+    this.props.location.state?.from &&
+      this.setState({
+        search: this.props.location.state.from.search,
+        from: this.props.location.state.from.pathname,
+      });
+     
   }
 
 
@@ -25,16 +33,19 @@ class MovieDetailesPage extends Component {
     MovieDetailesServices.getInfoFilms(id).then(data => this.setState({ infoFilm: data }));
   }
 
-  goBack=()=>{
-// this.props.history.push(`${this.state.from}`)
+  goBack = () => {
+    console.log("back")
+    // this.props.history.push(`/`)
+    this.props.history.push(`${this.state.from}${this.state.search}`);
   }
 
   render() {
     const { infoFilm } = this.state;
+    
     return (
       <section className={css.section}>
-        <button onClick={this.goBack} className={css.goBack}>GO BACK</button>
-        <MovieDetailesList infoFilm={infoFilm} />
+       <button type='button' onClick={this.goBack} className={css.goBack}>GO BACK</button>
+        <MovieDetailesList infoFilm={infoFilm} goBack={this.goBack} props={this.props} />
         <MovieDetailesMore infoFilm={infoFilm} />
       </section>
 

@@ -1,0 +1,15 @@
+.boxtReviews .listReviews{
+  display: flex;
+  list-style: none;
+  width: 500px;
+  padding: 0;
+}
+
+.boxtReviewsTitle{
+  background-color: burlywood;
+  border-radius: 10px;
+  margin: 10px; 
+ padding: 20px;
+
+
+}

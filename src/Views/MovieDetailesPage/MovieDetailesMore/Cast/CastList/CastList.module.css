@@ -1,14 +1,20 @@
-.listItem img{
+.listItemCast img{
 width: 90px;
 max-height: 120px;
 
 }
 
-.listImage{
+.listItemCast .listImage{
   width: 90px;
   height: 120px;
+  margin: 10px 0px 0px 0px;
 }
 
-.listItem{
-  margin: 10px;
+.listItemCast{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }

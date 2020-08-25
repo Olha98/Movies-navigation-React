@@ -7,7 +7,7 @@ export default function Cast({cast}) {
 
   return (
   <ul className={css.list}>
- {cast.map(castItem=> <CastList key={castItem.cast_id} {...castItem}/>)}
+ {cast.length > 0 && cast.map(castItem=> <CastList key={castItem.cast_id} {...castItem}/>)}
   </ul>
   )
 }

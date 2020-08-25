@@ -9,6 +9,7 @@ const queryString = require('query-string');
 class HomePage extends Component {
   state = {
     trendFilms: [],
+    form:''
   }
 
   componentDidMount() {
@@ -39,7 +40,7 @@ class HomePage extends Component {
 
   render() {
     const { trendFilms } = this.state
-console.log(trendFilms,"trendFilms")
+
     return (
       <section className={css.section}>
         <h2>Trending today</h2>

@@ -6,15 +6,15 @@ import css from './Header.module.css'
 
 export default function Header() {
   return (
-  
+
     <header className={css.header}>
       <nav>
         <ul className={css.list}>
-          <li><NavLink to={routes.home} className="link" activeClassName="active-link" className={css.listItem}>Home</NavLink></li>
-          <li><NavLink to={routes.movies} className="link" activeClassName="active-link" className={css.listItem}>Movies</NavLink></li>
+          <li><NavLink to={routes.home} className={css.listItem}>Home</NavLink></li>
+          <li><NavLink to={routes.movies} className={css.listItem}>Movies</NavLink></li>
         </ul>
       </nav>
     </header>
-   
+
   )
 }

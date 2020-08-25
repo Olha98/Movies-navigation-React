@@ -6,7 +6,6 @@ export default {
   async getReviews(id) {
     try {
       const responce = await axios.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${api_key}&language=en-US&page=1`)
-      console.log('getReviews', responce)
       return responce.data
     } catch (error) {
       console.log(error)

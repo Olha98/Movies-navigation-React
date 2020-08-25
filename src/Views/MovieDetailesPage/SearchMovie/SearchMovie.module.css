@@ -1,0 +1,30 @@
+.btn{
+  background-color: burlywood;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 7px;
+  border: 1px black solid;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: black;
+  box-shadow: 0 15px 20px rgba(0,0,0,.4);
+  color: burlywood;
+  transform: translateY(-7px);
+}
+
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form input{
+  height: 25px;
+  width: 290px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}

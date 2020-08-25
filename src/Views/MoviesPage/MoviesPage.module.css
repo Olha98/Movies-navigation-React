@@ -1,4 +1,4 @@
-.section{ 
+.boxMovies{ 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,7 +6,11 @@
   width: 100%;
 }
 
-.section h2{
+
+.boxMovies form{
+  width: 100%;
+}
+.boxMovies h2{
   text-transform: uppercase;
   width: 100%;
   text-align: center;
@@ -17,6 +21,6 @@ hr{
   background: #000;
   height: 3px;
   border-radius:2px;
-  width: 30%;
+  width: 20%;
 
 }

@@ -4,6 +4,7 @@ import Cast from './Cast/Cast'
 import Reviews from './Reviews/Reviews'
 import services from '../../../Services/creditsServices'
 import app from '../../../Services/reviewsServices'
+import css from './MovieDetailesMore.module.css'
 
 
 
@@ -32,13 +33,12 @@ class MovieDetailesMore extends Component {
   }
 
   render() {
-    const { infoFilm } = this.props;
     const { cast, results} = this.state
     return (
-      <ul>
+      <ul className={css.listDetal}>
         <h3>Additional information</h3>
-        <li><NavLink to={`${this.props.match.url}/cast`}>Cast</NavLink></li>
-        <li><NavLink to={`${this.props.match.url}/reviews`}>Reviews</NavLink></li>
+        <li><NavLink to={`${this.props.match.url}/cast`} className={css.navLink}>Cast</NavLink></li>
+        <li><NavLink to={`${this.props.match.url}/reviews`} className={css.navLink}>Reviews</NavLink></li>
         <Route path={`${this.props.match.url}/cast`} render={() => <Cast cast={cast} />} />
         <Route path={`${this.props.match.url}/reviews`} render={() => <Reviews results={results}/>} />
       </ul>
