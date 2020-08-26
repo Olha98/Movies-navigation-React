@@ -1,0 +1,38 @@
+.section_NotFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.section_NotFound h2{
+  margin: 0;
+}
+
+.section_NotFound button{
+  background-color: burlywood;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 7px;
+  border: 1px black solid;
+}
+
+.section_NotFound button:hover {
+  box-shadow: 0 15px 20px rgba(0,0,0,.4);
+  transform: translateY(-7px);
+
+}
+
+.Link_NotFound :hover {
+  padding: 10px;
+  color: burlywood;
+}
+
+.Link_NotFound{
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
