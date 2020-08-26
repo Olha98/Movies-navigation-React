@@ -35,8 +35,15 @@ class MovieDetailesMore extends Component {
     return (
       <ul className={css.listDetal}>
         <h3>Additional information</h3>
-        <li><NavLink to={`${this.props.match.url}/cast`} className={css.navLink}>Cast</NavLink></li>
-        <li><NavLink to={`${this.props.match.url}/reviews`} className={css.navLink}>Reviews</NavLink></li>
+        <li><NavLink to={{
+          pathname: `${this.props.match.url}/cast`,
+          state: this.props.location.state
+        }} className={css.navLink}>Cast</NavLink></li>
+        <li><NavLink to={{
+          pathname: `${this.props.match.url}/reviews`,
+          state: this.props.location.state
+        }}
+       className={css.navLink}>Reviews</NavLink></li>
         <Route path={`${this.props.match.url}/cast`} render={() => <Cast cast={cast} />} />
         <Route path={`${this.props.match.url}/reviews`} render={() => <Reviews results={results}/>} />
       </ul>

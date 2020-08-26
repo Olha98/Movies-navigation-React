@@ -9,14 +9,15 @@ class SearchMovie extends Component {
   state = {
     search: '',
     searchQuery: [],
-    placeholder:"Hi BRO! Enter the title of the movie..."
+    placeholder: "Hi BRO! Enter the title of the movie..."
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const { query: nextQuery } = queryString.parse(this.props.location.search)
+    
     if (nextQuery) {
       services.getResultOfSearch(nextQuery).then(({ results }) => this.setState({ searchQuery: results }))
-    } 
+    }
   }
 
 

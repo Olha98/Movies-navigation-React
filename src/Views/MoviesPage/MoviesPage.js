@@ -9,29 +9,35 @@ const queryString = require('query-string');
 
 class MoviesPage extends Component {
   state = {
+
     locationSearch: '',
-    locationPathname:'',
+    locationPathname: '',
   }
 
 
   componentDidMount() {
     const { query: nextQuery } = queryString.parse(this.props.location.search)
+
     if (nextQuery) {
+
       this.resultOfSearch()
-      this.setState({ locationSearch: this.props.location.search, 
-        locationPathname: this.props.location.pathname})
-      
+      this.setState({
+        locationSearch: this.props.location.search,
+        locationPathname: this.props.location.pathname
+      })
+
     }
   }
 
   resultOfSearch = () => {
-    services.getResultOfSearch().then(data => console.log('data', data))
+    services.getResultOfSearch()
   }
 
 
   hendelChangeSearch = (query) => {
+
     this.props.history.push({
-      ...this.props.location.pathname,
+      ...this.props.location,
       search: `query=${query}`
     })
   }

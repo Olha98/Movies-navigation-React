@@ -10,9 +10,9 @@ const MovieDetailesList = ({ infoFilm, goBack, props }) => {
 
   return (
     <>
-    <button type='button' onClick={goBack} className={css.goBack}>GO BACK</button>
+      <button type='button' onClick={goBack} className={css.goBack}>GO BACK</button>
       <div className={css.container}>
-        {backdrop_path ? <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt="/" /> :
+        {backdrop_path ? <img src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`} alt="/" width="500" height="350"/> :
           <img src={`${img}`} alt="/" width="500" height="350" />}
         <div>
           <h2>{original_title} ({release})</h2>
@@ -27,12 +27,12 @@ const MovieDetailesList = ({ infoFilm, goBack, props }) => {
             <li data-id={item.id} className={css.listItem} key={item.id}>
               <Link to={{
                 pathname: `/movies/${item.id}`,
-                state: { from: props.locathion }
+                state: { from: props.location }
               }} className={css.link}>
                 {item.name}
               </Link>
             </li>))
-              : <li className={css.listItem}>Not Faund</li>}
+              : <li className={css.listItem}>Not Found</li>}
           </ul>
         </div>
       </div>
