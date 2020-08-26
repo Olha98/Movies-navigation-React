@@ -26,3 +26,14 @@
   color: burlywood;
   transform: translateX(-7px);
 }
+
+
+.link{
+ 
+   color: black;
+  text-decoration: none;
+}
+
+.container ul{
+  margin-left: 20px;
+}

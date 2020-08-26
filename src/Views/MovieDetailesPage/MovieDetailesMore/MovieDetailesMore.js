@@ -15,7 +15,6 @@ class MovieDetailesMore extends Component {
     cast: []
   }
 
-
   componentDidMount() {
     this.getCast()
     this.getReviews()
@@ -24,7 +23,6 @@ class MovieDetailesMore extends Component {
   getCast() {
     const id = this.props.match.params.id
     services.getCredits(id).then(({ cast }) => this.setState({ cast }))
-
   }
 
   getReviews() {

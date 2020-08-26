@@ -11,19 +11,21 @@ class MovieDetailesPage extends Component {
   state = {
     infoFilm: '',
     search: '',
+    pathname:'',
     from: '',
   }
 
 
   componentDidMount() {
     this.getInfoAboutFilm();
-   console.log( this.props.location.state,  'this.props.location.state')
-    this.props.location.state?.from &&
+
+  this.props.location.state?.from &&
       this.setState({
-        search: this.props.location.state.from.search,
         from: this.props.location.state.from.pathname,
+        search: this.props.location.state.from.search,
       });
-     
+
+   
   }
 
 
@@ -34,9 +36,13 @@ class MovieDetailesPage extends Component {
   }
 
   goBack = () => {
-    console.log("back")
-    // this.props.history.push(`/`)
-    this.props.history.push(`${this.state.from}${this.state.search}`);
+    if (this.props.location.state && this.props.location.state.from) {
+      this.props.history.push(
+        `${this.state.from}${this.state.search}`
+      );
+    } else {
+      this.props.history.push("/");
+    }
   }
 
   render() {
@@ -44,7 +50,6 @@ class MovieDetailesPage extends Component {
     
     return (
       <section className={css.section}>
-       <button type='button' onClick={this.goBack} className={css.goBack}>GO BACK</button>
         <MovieDetailesList infoFilm={infoFilm} goBack={this.goBack} props={this.props} />
         <MovieDetailesMore infoFilm={infoFilm} />
       </section>

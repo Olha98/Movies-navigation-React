@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { Component} from 'react'
 import { NavLink } from 'react-router-dom';
 import routes from '../../routes'
 import css from './Header.module.css'
 
 
-export default function Header() {
+
+class Header extends Component {
+  render(){
+ 
   return (
 
     <header className={css.header}>
@@ -18,3 +21,6 @@ export default function Header() {
 
   )
 }
+}
+
+export default Header

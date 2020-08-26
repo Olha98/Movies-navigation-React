@@ -8,7 +8,6 @@ class ListHomeItem extends Component {
   }
 
   render() {
-    console.log("this.props", this.props)
     const { trendFilm: { title, original_name, id } } = this.props
     return (
       <li data-id={id} className={css.listItem}>
@@ -23,5 +22,3 @@ class ListHomeItem extends Component {
 }
 
 export default withRouter(ListHomeItem)
-
-// {from: this.props.locathion}

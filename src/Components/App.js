@@ -1,24 +1,34 @@
-import React, { Component } from 'react'
-import { Switch, Route, withRouter} from 'react-router-dom';
-import Header from './Header/Header';
-import HomePage from '../Views/HomePage/HomePage';
-import MoviesPage from '../Views/MoviesPage/MoviesPage';
-import NotFound from '../Views/NotFound/NotFound';
-import MovieDetailesPage from '../Views/MovieDetailesPage/MovieDetailesPage';
+import React, { Component, lazy, Suspense } from 'react'
+import { Switch, Route, withRouter } from 'react-router-dom';
+import Spinner from './Loader/Loader'
 import routes from '../routes'
+import css from './App.module.css'
 
- class App extends Component {
+const Header = lazy(() => import('./Header/Header'));
+const HomePage = lazy(() => import('../Views/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('../Views/MoviesPage/MoviesPage'));
+const NotFound = lazy(() => import('../Views/NotFound/NotFound'));
+const MovieDetailesPage = lazy(() => import('../Views/MovieDetailesPage/MovieDetailesPage'));
+
+class App extends Component {
+
+  getLoading = () => {
+    return <div className={css.loading}><Spinner/></div>
+  }
+
   render() {
     return (
       <>
-       <Header/>
-       <Switch>
-       <Route path={routes.home} exact component={HomePage} />
-       <Route path={routes.movies_id} component={MovieDetailesPage} />
-       <Route path={routes.movies} component={MoviesPage} />
-       <Route component={NotFound} />
-     </Switch>
-     </> 
+        <Suspense fallback={this.getLoading()}>
+          <Header />
+          <Switch>
+            <Route path={routes.home} exact component={HomePage} />
+            <Route path={routes.movies_id} component={MovieDetailesPage} />
+            <Route path={routes.movies} component={MoviesPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </Suspense>
+      </>
     )
   }
 }

@@ -14,7 +14,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     const { query: nextQuery } = queryString.parse(this.props.location.search)
-
     if (nextQuery) {
       this.getTrending()
     } else {
@@ -22,16 +21,6 @@ class HomePage extends Component {
     }
   }
 
-  componentDidUpdate(prevState, prevProps) {
-    // const {query:prevQuery} = queryString.parse(prevState.location.search)
-    //   const {query: nextQuery } = queryString.parse(this.props.location.search)
-
-    //   console.log(prevQuery,'prevQuery')
-    //   console.log(nextQuery,'nextQuery')
-    //   if(prevQuery !==nextQuery){
-
-    //   }
-  }
 
   getTrending = () => {
     homeServices.getTrendingFilms().then(data => this.setState({ trendFilms: data.results }))
